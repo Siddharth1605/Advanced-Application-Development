@@ -1,14 +1,15 @@
-import './App.css'
-import Login from './components/Login'
-import Signup from './components/Signup'
-import Homepage from './components/Homepage'
-function App() {
+import Card from "./components/Card";
+import Footer from "./components/Footer";
+import Main from "./components/Main";
+import Navbar from "./components/Navbar";
 
+export default function App() {
   return (
     <>
-      <Homepage />
+      <Navbar />
+      <Main />
+      <Card />
+      <Footer />
     </>
-  )
+  );
 }
-
-export default App
