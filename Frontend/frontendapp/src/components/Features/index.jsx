@@ -56,7 +56,7 @@ export default function Features() {
   };
 
   return (
-    <div className="container mx-auto max-w-[1344px]">
+    <div className="container mx-auto max-w-[1344px]" style={{backgroundColor:'#DDE6ED', borderRadius:'10px'}}>
       <div className="px-5 py-16 flex flex-col gap-10 sm:pb-28 sm:px-10 md:pb-36">
         {/* Head Content */}
         <motion.div
@@ -68,7 +68,7 @@ export default function Features() {
         >
           {/*<Subtitle style="mb-2">360° CUSTOMIZABLE</Subtitle>*/}
           <SubHead style="mb-[18px] sm:w-8/12 md:w-9/12 lg:w-7/12">
-            Provides the best service for our beloved elderly people
+            <p className="font-bold text-6xl" style={{color:'black'}}>Home Care Services for Seniors:</p> <p  className="font-bold text-6xl" style={{color:'#FF204E'}}>Aging in Place</p>
           </SubHead>
           {/*<Paragraph
             fontSize="text-sm"

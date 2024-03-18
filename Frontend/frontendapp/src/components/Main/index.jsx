@@ -3,7 +3,7 @@ import Hero from "../Hero";
 
 export default function Main() {
   return (
-    <main className="bg-tertiary-300">
+    <main style={{backgroundColor:'#0B2447'}}>
       <Hero />
       <Features />
     </main>

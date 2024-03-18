@@ -1,5 +1,7 @@
 import React, { useState } from 'react';
+import { Link } from 'react-router-dom';
 import validator from 'validator';
+
 
 function Login() {
   const [email, setEmail] = useState('');
@@ -79,19 +81,20 @@ function Login() {
             />
           </div>
         <div>
-          <button
+          <Link
+            to="/userdash"
             type="submit"
             style={{ width: '100%', padding: '10px', borderRadius: '4px', backgroundColor: '#4F46E5', color: '#fff', fontWeight: 'bold', cursor: 'pointer', border: 'none' }}
           >
             Login
-          </button>
+          </Link>
         </div>
       </form>
       <p style={{ marginTop: '20px', textAlign: 'center', fontSize: '0.875rem', color: '#666' }}>
         Dont have an account?{' '}
-        <button style={{ fontWeight: 'bold', color: '#4F46E5', cursor: 'pointer', border: 'none', background: 'none' }}>
+        <Link to="/signup" style={{ fontWeight: 'bold', color: '#4F46E5', cursor: 'pointer', border: 'none', background: 'none' }}>
           Sign up
-        </button>
+        </Link>
       </p>
     </div>
   </div>

@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import NavbarDropdown from "./navbarDropdown";
+import { Link } from "react-router-dom";
 
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
@@ -26,17 +27,13 @@ export default function Navbar() {
   }, [scrollPos]);
 
   return (
-    <nav className="bg-tertiary-300 relative">
+    <nav style={{backgroundColor:'#9DB2BF'}}>
       <div className="container mx-auto max-w-[1344px]">
-        <div className="h-16 md:h-20 p-5 md:py-6 lg:px-5 flex items-center justify-between z-20 bg-tertiary-300 relative">
+        <div className="h-16 md:h-20 p-5 md:py-6 lg:px-5 flex items-center justify-between z-20relative" style={{backgroundColor:'#9DB2BF'}}>
           {/* Icon */}
-          <a href="#">
-            <img
-              className="w-[124px] h-9 lg:w-[150px] lg:h-[42px] object-cover z-20 relative"
-              src="/shopify-header.png"
-              alt="shopify-icon"
-            />
-          </a>
+            <p
+              className="w-[124px] h-9 lg:w-[150px] lg:h-[42px] object-cover z-20 relative font-bold text-2xl">Golden Years</p>
+              
 
           {/* Hamburger */}
           <div
@@ -52,31 +49,26 @@ export default function Navbar() {
 
           {/* Menu */}
           <div className="hidden md:flex items-center md:gap-4 lg:gap-8 text-black-200 text-sm lg:text-base font-body">
-            <a href="#" className="navlink active-navlink">
-              Product
-            </a>
-            <a href="#" className="navlink">
-              Solutions
-            </a>
-            <a href="#" className="navlink">
-              Pricing
-            </a>
-            <a href="#" className="navlink">
-              Resources
-            </a>
-            <a href="#" className="navlink">
-              Customers
-            </a>
+            <Link to="/" className="navlink active-navlink">
+              Home
+            </Link>
+            <Link to="/userdash" className="navlink active-navlink">
+              Services
+            </Link>
+            <Link to="/login" className="navlink active-navlink ">
+              Login
+            </Link>
+            
           </div>
 
           {/* Button */}
           <div className="hidden md:flex md:gap-4 lg:gap-[25px] items-center text-sm lg:text-base font-head font-medium">
-            <a href="#">
-              <p className="text-black-100 underline cursor-pointer">Login</p>
-            </a>
+            <Link to="/login">
+              <p className="text-black-100  cursor-pointer">Login</p>
+            </Link>
             <a href="#">
               <button className="text-white bg-primary-100 md:py-2.5 px-4 py-3.5 px-[25px]">
-                Start free
+                User Profile
               </button>
             </a>
           </div>

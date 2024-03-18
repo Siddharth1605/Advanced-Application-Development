@@ -15,7 +15,7 @@ export default function Footer() {
   };
 
   return (
-    <div className="bg-primary-300">
+    <div style={{backgroundColor:'#526D82'}}>
       {/* Contact */}
       <div className="border-b border-white/15 relative overflow-hidden">
         <div className="container mx-auto max-w-[1344px]">

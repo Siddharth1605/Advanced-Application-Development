@@ -9,6 +9,7 @@ export default function CardItem({
   subhead,
   paragraph,
   primary,
+  img
 }) {
   const cardContent = {
     visible: { x: 0, opacity: 1, transition: { duration: 1 } },
@@ -23,9 +24,9 @@ export default function CardItem({
         variants={cardContent}
         className={`${primary ? "md:order-2" : "md:order-1"} w-full`}
       >
-        <Subtitle style="mb-2.5">{subtitle}</Subtitle>
+        <Subtitle style="mb-2.5"><p style={{color:'#FF204E'}}>{subtitle}</p></Subtitle>
         <SubHead style="mb-[18px] sm:w-4/5 md:w-full">
-          {subhead}
+          <p style={{color:'#9DB2BF'}}>{subhead}</p> 
         </SubHead>
         <Paragraph style="mb-[30px] w-4/5 sm:w-8/12 md:w-4/5 lg:w-8/12">
           {paragraph}
@@ -37,7 +38,7 @@ export default function CardItem({
           primary ? "md:order-1" : "md:order-2"
         } w-full flex justify-center`}
       >
-      <img src={img1} style={{borderRadius:'10px'}}/>
+      <img src={img} style={{borderRadius:'10px'}}/>
       {/*<CardImage primary={primary}/>*/}
       </div>
     </div>
