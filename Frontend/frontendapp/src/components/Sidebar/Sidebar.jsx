@@ -20,16 +20,16 @@ function Sidebar() {
 
         <ul className='sidebar-list'>
             <li className='sidebar-list-item'>
-                    <BsGrid1X2Fill className='icon'/> Dashboard
+                    <Link to="/"><p className='text-black-100'><BsGrid1X2Fill className='icon'/> Home</p></Link>
             </li>
             <li className='sidebar-list-item'>
-                    <BsFillGrid3X3GapFill className='icon'/> Users
+                    <Link to="/admin"><p className='text-black-100'><BsFillGrid3X3GapFill className='icon'/> Dashboard</p></Link>
             </li>
             {/*<li className='sidebar-list-item'>
                     <BsFillGrid3X3GapFill className='icon'/> Doctors
             </li>*/}
             <li className='sidebar-list-item'>
-                    <BsFillGearFill className='icon'/> Log out
+                <Link to="/"><p className='text-black-100'><BsFillGearFill className='icon'/> Log out</p></Link>
             </li>
         </ul>
     </aside>

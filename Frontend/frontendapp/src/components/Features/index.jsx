@@ -68,7 +68,7 @@ export default function Features() {
         >
           {/*<Subtitle style="mb-2">360° CUSTOMIZABLE</Subtitle>*/}
           <SubHead style="mb-[18px] sm:w-8/12 md:w-9/12 lg:w-7/12">
-            <p className="font-bold text-6xl" style={{color:'black'}}>Home Care Services for Seniors:</p> <p  className="font-bold text-6xl" style={{color:'#FF204E'}}>Aging in Place</p>
+            <p className="font-bold text-4xl" style={{color:'black'}}>Home Care Services for Seniors:</p> <p  className="font-bold text-4xl" style={{color:'#FF204E'}}>Aging in Place</p>
           </SubHead>
           {/*<Paragraph
             fontSize="text-sm"

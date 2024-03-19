@@ -29,7 +29,7 @@ export default function Footer() {
               color="text-white"
               style="mb-[18px] sm:w-9/12 md:w-9/12 lg:w-6/12"
             >
-              We can take care of the installation
+              We can take care of your family
             </SubHead>
             <Paragraph
               color="text-white/70"
@@ -75,11 +75,10 @@ export default function Footer() {
       <footer className="container mx-auto max-w-[1344px]">
         <div className="px-5 py-10 flex flex-col sm:px-10 lg:grid grid-cols-3 lg:gap-y-32">
           <div className="lg:col-span-1">
-            <img
-              className="w-[125px] h-auto mb-10 lg:mb-0"
-              src="shopify-footer.png"
-              alt="shopify-footer"
-            />
+            <p   
+            className="w-[125px] h-auto mb-10 lg:mb-0"
+            >
+              </p>
           </div>
           <div className="grid grid-cols-2 gap-9 font-body mb-[52px] md:grid-cols-4 lg:col-span-2 lg:mb-0">
             <div>
@@ -165,33 +164,10 @@ export default function Footer() {
           </div>
           <div className="text-center lg:col-span-3 md:flex justify-between items-center">
             <div className="flex items-center justify-center gap-4 mb-4 order-2">
-              <a href="https://www.instagram.com/bethup97/?next=%2F" target="_blank">
-                <img
-                  className="footer-icon"
-                  src="/instagram.svg"
-                  alt="instagram"
-                />
-              </a>
-              <a href="https://github.com/berthutapea" target="_blank">
-                <img className="footer-icon" src="/github.svg" alt="github" />
-              </a>
-              <a href="https://t.me/bethup97" target="_blank">
-                <img
-                  className="footer-icon"
-                  src="/telegram.svg"
-                  alt="telegram"
-                />
-              </a>
-              <a href="https://www.linkedin.com/in/gilberthutapea/" target="_blank">
-                <img
-                  className="footer-icon"
-                  src="/linkedin.svg"
-                  alt="linkedin"
-                />
-              </a>
+             
             </div>
             <p className="font-body text-white font-medium order-1">
-              © 2022 Shopify by{" "}
+              © 2024 Goldenyears by{" "}
               <a
                 className="italic underline"
                 href="https://berthutapea.vercel.app/"

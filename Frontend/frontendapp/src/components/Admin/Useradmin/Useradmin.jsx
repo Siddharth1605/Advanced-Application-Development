@@ -1,7 +1,7 @@
 import React from 'react';
 import { useState } from 'react';
 import './User.css'
-import img1 from '../../../assets/Citizen2.jpg'
+import img1 from '../../../assets/User.jpg'
 import Box from '@mui/material/Box';
 import InputLabel from '@mui/material/InputLabel';
 import MenuItem from '@mui/material/MenuItem';
@@ -86,7 +86,7 @@ duration : '10 days',
   ]
   const [data, setData] = useState(users)
   const [process, setProcess] = useState('');
-  const handleChange = (event) => {
+  const handleFilter = (event) => {
     const selectedValue = event.target.value;
     setProcess(selectedValue);
     
@@ -106,12 +106,13 @@ duration : '10 days',
         <div className="addordel">
         <select className='filter'
         value={process}
-        onChange={handleChange}
+        onChange={handleFilter}
       >
         <option value="Completed">Completed</option>
         <option value="Pending">Pending</option>
         <option value="Rejected">Rejected</option>
       </select>
+      <button  className='service'> Add service</button> 
           <button  className='add'> Add user</button> 
           <button  className='del'>Delete all users</button> 
         </div>

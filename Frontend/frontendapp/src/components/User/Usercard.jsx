@@ -6,7 +6,8 @@ import {
   Button,
 } from "@material-tailwind/react";
 import { Link } from "react-router-dom";
-export function UserCard({heading, para}) {
+import img1 from '../../assets/service1.jpg'
+export function UserCard({img, heading, para}) {
   return (
     <Card className="w-full max-w-[48rem] flex-row" style={{backgroundColor:'#DDE6ED', padding:'10px', borderRadius:'10px'}}>
       <CardHeader
@@ -15,13 +16,13 @@ export function UserCard({heading, para}) {
         className="m-0 w-2/5 shrink-0 rounded-r-none"
       >
         <img
-          src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1471&q=80"
+          src= {img}
           alt="card-image"
           className="h-full w-full object-cover"
         />
       </CardHeader>
       <CardBody>
-        <Typography variant="h6" color="gray" className="mb-4 uppercase">
+        <Typography variant="h6" color="black" className="mb-4 uppercase text-black-100 font-2xl" style={{color:'black'}}>
           {heading}
         </Typography>
         

@@ -4,12 +4,12 @@ import './Appoinment.css';
 
 const Appoinment = () => {
     return (
-        <section className="appoinment-wrapper" style={{backgroundColor:'#DDE6ED'}}>
+        <section className="appoinment-wrapper">
             <Container>
                 <Grid container spacing={3}>
                     <Grid item xs={12}>
                         <div className="section-title">
-                            <h1 className="mt-5">Any Inquiry?</h1>
+                            <h1 className="mt-5 font-bold text-4xl" style={{color:'#FF204E'}}>Any Inquiry?</h1>
                         </div>
                         <div className="appoinment-form" style={{color:'red' }}>
                             <form action="#" className="row">
@@ -35,7 +35,7 @@ const Appoinment = () => {
                                     />
                                 </Grid>
                                 <Grid item xs={12}>
-                                    <Button variant="contained" color="primary" className="theme-btn btn-fill form-btn mt-5" style={{ width: '100%' }}>
+                                    <Button variant="contained" style={{backgroundColor:'#FF204E'}} className="theme-btn btn-fill form-btn mt-5 pl-10" >
                                         Submit
                                     </Button>
                                 </Grid>

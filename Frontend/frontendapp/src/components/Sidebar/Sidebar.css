@@ -38,7 +38,7 @@
 }
 
 .sidebar-list-item:hover {
-    background-color: #19376d;
+    background-color: darkorange;
     cursor: pointer;
 }
 

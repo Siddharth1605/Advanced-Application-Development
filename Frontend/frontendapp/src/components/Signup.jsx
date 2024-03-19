@@ -1,51 +1,67 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import validator from 'validator';
-
+import { useNavigate } from 'react-router-dom';
 
 export default function Signup() {
-  const [formData, setFormData] = useState({
-    username: '',
-    email: '',
-    phno: '',
-    password: ''
-  });
+  const [email, setEmail] = useState('');
+  const [password, setPassword] = useState('');
+  const [username, setUserName] = useState('');
+  const [phone, setPhone] = useState(true);
+  const nav = useNavigate();
+  const [isFormValid, setIsFormValid] = useState(true);
+  const [emailError, setEmailError] = useState('');
 
-  const [errors, setErrors] = useState({});
 
-  const handleChange = (e) => {
-    const { name, value } = e.target;
-    setFormData({ ...formData, [name]: value });
+  const handleEmailChange = (e) => {
+    setEmail(e.target.value);
+    validateForm();
+  };
+
+  const handlePasswordChange = (e) => {
+    setPassword(e.target.value);
+    validateForm();
+  };
+
+  const handlePhoneChange = (e) => {
+    setPhone(e.target.value);
+    validateForm();
+  };
+  const handleUserNameChange = (e) => {
+    setUserName(e.target.value);
+    validateForm();
+  };
+  const validateForm = () => {
+    // Reset form validation
+    setIsFormValid(true);
+    setEmailError('');
+
+    if (!validator.isEmail(email)) {
+      setIsFormValid(false);
+      setEmailError('Invalid email address');
+    }
+
+    if (validator.isEmpty(password)) {
+      setIsFormValid(false);
+    }
+
+    if (!validator.isNumeric(phone)) {
+      setIsFormValid(false);
+    }
+
+    if(validator.isEmpty(username))
+    {
+      setIsFormValid(false);
+    }
   };
 
   const handleSubmit = (e) => {
     e.preventDefault();
 
-    const newErrors = {};
+    validateForm();
 
-    if (!validator.isEmail(formData.email)) {
-      newErrors.email = 'Invalid email address';
-    }
-
-    if (!validator.isMobilePhone(formData.phno, 'any', { strictMode: false })) {
-      newErrors.phno = 'Invalid phone number';
-    }
-
-    if (formData.password.length < 6) {
-      newErrors.password = 'Password must be at least 6 characters long';
-    }
-
-    if (Object.keys(newErrors).length === 0) {
-      console.log('Form submitted:', formData);
-      setFormData({
-        username: '',
-        email: '',
-        phno: '',
-        password: ''
-      });
-      setErrors({});
-    } else {
-      setErrors(newErrors);
+    if (isFormValid) {
+      nav('/login');
     }
   };
 
@@ -62,10 +78,11 @@ export default function Signup() {
               type="text"
               autoComplete="current-username"
               required
-              value={formData.username}
-              onChange={handleChange}
+              value={username}
+              onChange={handleUserNameChange}
               style={{ width: '100%', padding: '10px', borderRadius: '4px', border: '1px solid #ccc' }}
             />
+            {!isFormValid && <p style={{ color: 'red', fontSize: '0.875rem' }}>UserName Error</p>}
           </div>
           <div>
             <label htmlFor="email" style={{ fontSize: '0.875rem', fontWeight: '500', color: '#333' }}>Email</label>
@@ -75,25 +92,25 @@ export default function Signup() {
               type="email"
               autoComplete="current-email"
               required
-              value={formData.email}
-              onChange={handleChange}
+              value={email}
+              onChange={handleEmailChange}
               style={{ width: '100%', padding: '10px', borderRadius: '4px', border: '1px solid #ccc' }}
             />
-            {errors.email && <p style={{ color: 'red', fontSize: '0.75rem' }}>{errors.email}</p>}
+            {!isFormValid && emailError &&  <p style={{ color: 'red', fontSize: '0.875rem' }}>Email error</p>}
           </div>
           <div>
-            <label htmlFor="phno" style={{ fontSize: '0.875rem', fontWeight: '500', color: '#333' }}>Phone Number</label>
+            <label htmlFor="phone" style={{ fontSize: '0.875rem', fontWeight: '500', color: '#333' }}>Phone Number</label>
             <input
               id="phno"
               name="phno"
               type="text"
               autoComplete="current-no"
               required
-              value={formData.phno}
-              onChange={handleChange}
+              value={phone}
+              onChange={handlePhoneChange}
               style={{ width: '100%', padding: '10px', borderRadius: '4px', border: '1px solid #ccc' }}
             />
-            {errors.phno && <p style={{ color: 'red', fontSize: '0.75rem' }}>{errors.phno}</p>}
+            {!isFormValid && <p style={{ color: 'red', fontSize: '0.75rem' }}>Phone Number Error</p>}
           </div>
           <div>
             <label htmlFor="password" style={{ fontSize: '0.875rem', fontWeight: '500', color: '#333' }}>Password</label>
@@ -103,20 +120,19 @@ export default function Signup() {
               type="password"
               autoComplete="current-password"
               required
-              value={formData.password}
-              onChange={handleChange}
+              value={password}
+              onChange={handlePasswordChange}
               style={{ width: '100%', padding: '10px', borderRadius: '4px', border: '1px solid #ccc' }}
             />
-            {errors.password && <p style={{ color: 'red', fontSize: '0.75rem' }}>{errors.password}</p>}
+            {!isFormValid && <p style={{ color: 'red', fontSize: '0.75rem' }}>Password Error</p>}
           </div>
           <div>
-            <Link
-            to="/userdash"
+            <button
               type="submit"
               style={{ width: '100%', padding: '10px', borderRadius: '4px', backgroundColor: '#4F46E5', color: '#fff', fontWeight: 'bold', cursor: 'pointer', border: 'none' }}
             >
               Sign up
-            </Link>
+              </button>
           </div>
         </form>
         <p style={{ marginTop: '20px', textAlign: 'center', fontSize: '0.875rem', color: '#666' }}>

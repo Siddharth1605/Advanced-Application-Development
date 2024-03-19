@@ -48,7 +48,7 @@ export default function Navbar() {
           </div>
 
           {/* Menu */}
-          <div className="hidden md:flex items-center md:gap-4 lg:gap-8 text-black-200 text-sm lg:text-base font-body">
+          <div className="hidden md:flex items-center md:gap-4 lg:gap-8 text-black-500 text-sm lg:text-base font-body">
             <Link to="/" className="navlink active-navlink">
               Home
             </Link>
@@ -63,13 +63,13 @@ export default function Navbar() {
 
           {/* Button */}
           <div className="hidden md:flex md:gap-4 lg:gap-[25px] items-center text-sm lg:text-base font-head font-medium">
-            <Link to="/login">
-              <p className="text-black-100  cursor-pointer">Login</p>
+            <Link to="/signup">
+              <p className="text-black-100  cursor-pointer">Signup</p>
             </Link>
             <a href="#">
-              <button className="text-white bg-primary-100 md:py-2.5 px-4 py-3.5 px-[25px]">
+              {/*<button className="text-white bg-primary-100 md:py-2.5 px-4 py-3.5 px-[25px]">
                 User Profile
-              </button>
+          </button>*/}
             </a>
           </div>
         </div>

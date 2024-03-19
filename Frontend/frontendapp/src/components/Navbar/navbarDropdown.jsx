@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 export default function NavbarDropdown({ isOpen }) {
   return (
     <div
@@ -7,21 +8,16 @@ export default function NavbarDropdown({ isOpen }) {
     >
       <div className="flex flex-col gap-16 mt-16">
         <div className="flex flex-col gap-8 items-center text-black-200">
-          <a className="w-fit" href="#">
-            <p className="navlink active-navlink">Product</p>
-          </a>
-          <a className="w-fit" href="#">
-            <p className="navlink">Solutions</p>
-          </a>
-          <a className="w-fit" href="#">
-            <p className="navlink">Pricing</p>
-          </a>
-          <a className="w-fit" href="#">
-            <p className="navlink">Resources</p>
-          </a>
-          <a className="w-fit" href="#">
-            <p className="navlink">Customers</p>
-          </a>
+         
+          <Link to="/" className="w-fit">
+            <p className="navlink active-navlink">Home</p>
+          </Link>
+          <Link to="/userdash" className="w-fit">
+            <p className="navlink active-navlink">Services</p>
+          </Link>
+          <Link to="/login" className="w-fit">
+              <p className="navlink active-navlink">Login</p>
+            </Link>
         </div>
         <div className="flex flex-col gap-8">
           <a href="#">
