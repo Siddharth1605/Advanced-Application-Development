@@ -170,10 +170,10 @@ export default function Footer() {
               © 2024 Goldenyears by{" "}
               <a
                 className="italic underline"
-                href="https://berthutapea.vercel.app/"
+                href="https://github.com/Siddharth1605"
                 target="_blank"
               >
-                Gilbert Hutapea
+                Siddharth
               </a>
             </p>
           </div>
