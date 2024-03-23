@@ -1,18 +1,18 @@
-package com.backend.Service;
+package com.backend.seniorcare.Service;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import com.backend.Repository.UserRepository;
-import com.backend.Model.User;
+import com.backend.seniorcare.Model.User;
+
 import io.micrometer.common.lang.NonNull;
+import com.backend.seniorcare.Repository.UserRepository;
 
 @Service
 public class UserService {
     
     @Autowired 
     private UserRepository userrepo;
-
     public User updateUser(@NonNull long id, User updated)
     {
         return userrepo.findById(id).map(existingUser -> {

@@ -1,4 +1,4 @@
-package com.backend.Dto;
+package com.backend.seniorcare.Dto;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
