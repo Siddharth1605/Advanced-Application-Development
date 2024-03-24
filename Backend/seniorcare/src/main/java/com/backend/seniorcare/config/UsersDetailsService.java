@@ -10,6 +10,7 @@ import org.springframework.stereotype.Component;
 
 import com.backend.seniorcare.Model.User;
 import com.backend.seniorcare.Repository.UserRepository;
+
 @Component
 public class UsersDetailsService implements UserDetailsService {
 
