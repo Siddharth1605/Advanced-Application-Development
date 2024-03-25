@@ -56,7 +56,7 @@ public class UserController
         return new ResponseEntity<>(newUser, HttpStatus.CREATED);
     }
 
-    @PutMapping("updateUser/{email}")
+    @PutMapping("/updateUser/{email}")
     @PreAuthorize("hasAuthority('USER') or hasAuthority('ADMIN')")
     public ResponseEntity<User> updateUser(@NonNull @PathVariable String email,
             @RequestBody UpdateRequest updateRequest) {
@@ -72,6 +72,7 @@ public class UserController
     }
 
     @DeleteMapping("/deleteUsers")
+    @PreAuthorize("hasAuthority('ADMIN')")
     public ResponseEntity<Void> delete()
     {
         userService.deleteAllUsers();
